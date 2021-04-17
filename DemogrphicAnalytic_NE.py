@@ -4,7 +4,7 @@
 import numpy as np      
 import pandas as pd 
 ## Read the dataset
-dt = pd.read_excel('F:/MY FILE/New Results/NE Data/NE Raw Data/Census/Assam.xlsx')
+dt = pd.read_excel('F:/MY FILE/New Results/NE Data/NE Raw Data/Census/Assam_Census.xlsx') ## File 1 
 dt.info()
 dt.describe()  
 
@@ -99,7 +99,7 @@ from sklearn.metrics import r2_score
 #from subprocess import check_output
 #from sklearn.model_selection import cross_val_score
 ###### Read the data
-data= pd.read_excel('C:/Users/dell/Desktop/North-East India/Raw Data/Assam.xlsx')
+data= pd.read_excel('C:/Users/dell/Desktop/North-East India/Raw Data/Assam.xlsx')  ## File 2
 names = data.columns
 data.info()
 data.describe()
