@@ -210,9 +210,16 @@ print("Model predicted Lasso: ",pred6)
 print("Model predicted Bayesian ridge Reg: ",pred7)
 print("Model predicted ElasticNet:", pred8)
 
+""" Comparing multiple models """
+########################################################################################
+models = pd.DataFrame({'Models': ['RFR','DTR','SVR','MLR','Ridge','Lasso', 'Bayesian Reg', 'E_Net'],   
+    'Score': [scoreOfModel1,scoreOfModel2, scoreOfModel3, scoreOfModel4,
+              scoreOfModel5, scoreOfModel6, scoreOfModel7, scoreOfModel8] })
+models.sort_values(by='Score', ascending=False)
+#########################################################################################
 al = pd.concat([pred1,pred2,pred3,pred4,pred5,pred6,pred7,pred8, y_tst], axis =1)
 al.to_csv('F:/Assam_pred_8_Algo.csv')
-#################################################################################
+#########################################################################################
 
 
 
