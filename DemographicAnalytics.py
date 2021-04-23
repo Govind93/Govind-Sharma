@@ -154,6 +154,7 @@ pred3 = pd.DataFrame(pred3)
 ################### Multiple Linear Regression #####################################
 reg = LinearRegression()
 reg.fit(X_trn, y_trn)
+scoreOfModel4 = reg.score(X_trn, y_trn)
 
 pred4 = reg.predict(X_tst)
 pred4 = pd.DataFrame(pred4) 
@@ -164,6 +165,7 @@ rg = Ridge(alpha=1.0)
 rg.fit(X_trn, y_trn)
 rg.score(X_trn, y_trn)
 rg.__dict__
+scoreOfModel5 = rg.score(X_trn, y_trn)
 
 pred5 = rg.predict(X_tst)
 pred5 = pd.DataFrame(pred5)
@@ -177,6 +179,8 @@ ls.score(X_trn, y_trn)
 ls.intercept_
 ls.coef_
 ls.__dict__
+scoreOfModel6 = ls.score(X_trn, y_trn)
+
 pred6 = ls.predict(X_tst)
 pred6 = pd.DataFrame(pred6)
 print('r2 score:', {r2_score(y_tst, pred6)})
@@ -185,6 +189,7 @@ Bs = BayesianRidge()
 Bs.fit(X_trn, y_trn) 
 Bs.coef_
 Bs.intercept_
+scoreOfModel7 = Bs.score(X_trn, y_trn)
 
 pred7 = Bs.predict(X_tst)
 pred7 = pd.DataFrame(pred7)
@@ -196,6 +201,8 @@ print('r2 score BSR:', {r2_score(y_tst, pred7)}) #model Evaluation
 enet = ElasticNet(alpha=0.005, l1_ratio=0.7)
 enet.fit(X_trn, y_trn)
 enet.alpha
+scoreOfModel8 = enet.score(X_trn, y_trn)
+
 pred8 = enet.predict(X_tst)
 pred8 = pd.DataFrame(pred8)
 print('r2 score:', {r2_score(y_tst, pred8)})
