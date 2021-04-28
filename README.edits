@@ -1,7 +1,9 @@
-
+## Naive bayesian algorithm to predict most vulnarable regions (Natural hazards) in North east India in the context of Dempgramic dynamics
+# import the module
 import numpy as np      
 import pandas as pd
 
+# read the dataset
 dt = pd.read_excel('Assam_Census.xlsx') ## File 1
 
 dt.info()
