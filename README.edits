@@ -1,1 +1,377 @@
 
+import numpy as np      
+import pandas as pd
+
+dt = pd.read_excel('Assam_Census.xlsx') ## File 1
+
+dt.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 26 entries, 0 to 25
+Data columns (total 48 columns):
+Dist91       22 non-null object
+TPOP91       22 non-null float64
+TMP91        22 non-null float64
+TFP91        22 non-null float64
+MSC91        22 non-null float64
+FSC91        22 non-null float64
+MST91        22 non-null float64
+FST91        22 non-null float64
+MLIT91       22 non-null float64
+FLIT91       22 non-null float64
+MILL91       0 non-null float64
+FILL91       0 non-null float64
+TMW91        22 non-null float64
+TFW91        22 non-null float64
+NONWM91      22 non-null float64
+NONWF91      22 non-null float64
+Dist2001     22 non-null object
+TPOP2001     22 non-null float64
+TMP2001      22 non-null float64
+TFP2001      22 non-null float64
+MSC2001      22 non-null float64
+FSC2001      22 non-null float64
+MST2001      22 non-null float64
+FST2001      22 non-null float64
+MLIT2001     22 non-null float64
+FLIT2001     22 non-null float64
+MILL2001     22 non-null float64
+FILL2001     22 non-null float64
+TMW2001      22 non-null float64
+TFW2001      22 non-null float64
+NONWM2001    22 non-null float64
+NONWF2001    22 non-null float64
+Dist2011     26 non-null object
+TPOP2011     26 non-null int64
+TMP2011      26 non-null int64
+TFP2011      26 non-null int64
+MSC2011      26 non-null int64
+FSC2011      26 non-null int64
+MST2011      26 non-null int64
+FST2011      26 non-null int64
+MLIT2011     26 non-null int64
+FLIT2011     26 non-null int64
+MILL2011     26 non-null int64
+FILL2011     26 non-null int64
+TMW2011      26 non-null int64
+TFW2011      26 non-null int64
+NONWM2011    26 non-null int64
+NONWF2011    26 non-null int64
+dtypes: float64(30), int64(15), object(3)
+memory usage: 9.9+ KB
+
+dt.describe()
+Out[4]: 
+             TPOP91          TMP91  ...      NONWM2011     NONWF2011
+count  2.200000e+01      22.000000  ...      26.000000  2.600000e+01
+mean   9.004642e+05  465558.681818  ...  280068.653846  4.486859e+05
+std    3.252570e+05  168244.092904  ...  125015.738533  2.229502e+05
+min    4.149100e+05  215176.000000  ...   54479.000000  7.459500e+04
+25%    7.102075e+05  365508.750000  ...  215185.000000  3.286745e+05
+50%    7.914410e+05  411957.500000  ...  245074.000000  3.764280e+05
+75%    1.151911e+06  591191.750000  ...  312311.250000  5.153452e+05
+max    1.687449e+06  871978.000000  ...  672384.000000  1.171386e+06
+
+[8 rows x 45 columns]
+
+Tr2011 = dt.iloc[:, 32:48]
+
+names = dt.iloc[:,32].to_frame() 
+dtt = Tr2011.sum(axis = 0, skipna = True)
+
+names.head()
+Out[7]: 
+     Dist2011
+0      DHUBRI
+1   KOKRAJHAR
+2  BONGAIGAON
+3    GOALPARA
+4     BARPETA
+
+dtt.head()
+Out[8]: 
+Dist2011    DHUBRIKOKRAJHARBONGAIGAONGOALPARABARPETANALBAR...
+TPOP2011                                             30723414
+TMP2011                                              15694583
+TFP2011                                              15028831
+MSC2011                                               1127209
+dtype: object
+
+##### Calculate the ratio for each observation
+
+Tpop = Tr2011[['TPOP2011']]/dtt[[1]]
+TFP = Tr2011[['TFP2011']]/dtt[[3]]
+TMP = Tr2011[['TMP2011']]/dtt[[2]]
+TFW = Tr2011[['TFW2011']]/dtt[[13]]
+TMW = Tr2011[['TMW2011']]/dtt[[12]] 
+Tpop = Tpop.values
+TFP = TFP.values
+TMP = TMP.values
+TFW = TFW.values
+TMW = TMW.values
+
+Tpop
+Out[11]: 
+array([[0.06344536],
+       [0.02887511],
+       [0.02404694],
+       [0.03281481],
+       [0.0551248 ],
+       [0.02511567],
+       [0.04939366],
+       [0.03022125],
+       [0.06262683],
+       [0.03391996],
+       [0.02233258],
+       [0.03116265],
+       [0.09190932],
+       [0.03472557],
+       [0.03555126],
+       [0.03746491],
+       [0.04317017],
+       [0.04322205],
+       [0.03112652],
+       [0.03999184],
+       [0.02145907],
+       [0.05652422],
+       [0.03092348],
+       [0.00696869],
+       [0.02706952],
+       [0.04081376]])
+       
+## Wrt Total Population 
+       
+ TpopMax = Tpop.max()
+TpopMin = Tpop.min()
+TpopMean = (TpopMax + TpopMin)/2
+
+TpopMax
+Out[13]: 0.09190931710909471
+
+TpopMin
+Out[14]: 0.0069686916955257645
+
+TpopMean
+Out[15]: 0.049439004402310235
+
+## Prior probabiity (Wrt Total Population)
+
+Prob_H = Tpop/TpopMax    # put the value of  TpopMax
+Prob_M = abs((TpopMean - Tpop)/ TpopMean)
+Prob_L = abs((TpopMax - Tpop)/ TpopMax)
+
+Prob_H
+Out[17]: 
+array([[0.69030388],
+       [0.31416958],
+       [0.26163764],
+       [0.35703464],
+       [0.59977378],
+       [0.27326572],
+       [0.53741738],
+       [0.32881597],
+       [0.68139805],
+       [0.369059  ],
+       [0.24298491],
+       [0.33905866],
+       [1.        ],
+       [0.37782424],
+       [0.38680798],
+       [0.4076291 ],
+       [0.46970396],
+       [0.47026845],
+       [0.33866557],
+       [0.43512286],
+       [0.23348094],
+       [0.61499989],
+       [0.33645647],
+       [0.07582138],
+       [0.2945242 ],
+       [0.44406552]])
+
+########## Composite index  #############################################
+  x = [Tpop]; p = [TFP]; q = [TMP]; r = [TFW]; s = [TMW]  
+matrix = [(x*5)+(p*4)+(q*3)+(r*2)+(s*1) for x,p,q,r,s in zip(x,p,q,r,s)]
+##########################################################################
+
+matrix
+Out[19]: 
+[array([[0.90976521],
+        [0.43694364],
+        [0.34681357],
+        [0.48242613],
+        [0.7835897 ],
+        [0.3603857 ],
+        [0.76262995],
+        [0.43830133],
+        [0.95411255],
+        [0.5286561 ],
+        [0.36755712],
+        [0.46020534],
+        [1.32113585],
+        [0.55517742],
+        [0.57060965],
+        [0.58366488],
+        [0.67637661],
+        [0.67543808],
+        [0.48428107],
+        [0.56525349],
+        [0.30356677],
+        [0.81644542],
+        [0.48641832],
+        [0.10728294],
+        [0.42049649],
+        [0.60246668]])]     
+        
+CI = matrix
+CI_Max = np.max(matrix)
+CI_Min = np.min(matrix)
+CI_Mean = (CI_Max + CI_Min)/2
+
+CI_Max
+Out[21]: 1.3211358543552831
+
+CI_Min
+Out[22]: 0.10728294104473408
+
+CI_Mean
+Out[23]: 0.7142093977000086
+
+ ## Conditional Probalility 
+
+Prob_CI_H = CI / CI_Max   
+Prob_CI_M = abs((CI_Mean - CI) / CI_Mean) 
+Prob_CI_L = abs((CI_Max - CI) / CI_Max)
+
+Prob_CI_H
+Out[25]: 
+array([[[0.68862351],
+        [0.33073332],
+        [0.26251166],
+        [0.36516012],
+        [0.59311819],
+        [0.27278474],
+        [0.57725324],
+        [0.33176098],
+        [0.7221911 ],
+        [0.40015271],
+        [0.27821297],
+        [0.34834066],
+        [1.        ],
+        [0.42022735],
+        [0.43190838],
+        [0.44179021],
+        [0.51196598],
+        [0.51125558],
+        [0.36656417],
+        [0.42785417],
+        [0.2297771 ],
+        [0.61798748],
+        [0.36818191],
+        [0.08120508],
+        [0.31828406],
+        [0.45602175]]])
+
+ ## Numerator
+
+NUM_H = (Prob_H * Prob_CI_H)
+NUM_M = (Prob_M * Prob_CI_M)
+NUM_L = (Prob_L * Prob_CI_L)
+
+NUM_H
+Out[27]: 
+array([[[0.47535948],
+        [0.10390635],
+        [0.06868293],
+        [0.13037481],
+        [0.35573674],
+        [0.07454272],
+        [0.31022592],
+        [0.10908831],
+        [0.4920996 ],
+        [0.14767996],
+        [0.06760155],
+        [0.11810792],
+        [1.        ],
+        [0.15877208],
+        [0.16706561],
+        [0.18008654],
+        [0.24047244],
+        [0.24042737],
+        [0.12414266],
+        [0.18616913],
+        [0.05364857],
+        [0.38006223],
+        [0.12387718],
+        [0.00615708],
+        [0.09374236],
+        [0.20250353]]])
+        
+## Denominator   
+        
+  Deno = (NUM_H + NUM_M + NUM_L)
+
+Deno
+Out[29]: 
+array([[[0.64936278],
+        [0.72438517],
+        [0.87741911],
+        [0.64768066],
+        [0.52975353],
+        [0.84676825],
+        [0.5058434 ],
+        [0.70776571],
+        [0.67021127],
+        [0.60770091],
+        [0.88012128],
+        [0.68028902],
+        [1.7300057 ],
+        [0.58576048],
+        [0.57189427],
+        [0.55502342],
+        [0.50599172],
+        [0.50615713],
+        [0.66230176],
+        [0.54921448],
+        [0.96943749],
+        [0.54765163],
+        [0.66256357],
+        [1.5852934 ],
+        [0.76074964],
+        [0.53221558]]])
+        
+ ## Naive bayes Thm (Posterior Probability)
+      
+Prob_H_CI = NUM_H/ Deno
+Prob_M_CI = NUM_M/ Deno
+Prob_L_CI = NUM_L/ Deno
+
+Prob_H_CI
+Out[31]: 
+array([[[0.73203993],
+        [0.14344074],
+        [0.07827836],
+        [0.2012949 ],
+        [0.67151366],
+        [0.08803202],
+        [0.61328451],
+        [0.15413053],
+        [0.73424549],
+        [0.24301422],
+        [0.07680936],
+        [0.17361432],
+        [0.57803278],
+        [0.27105291],
+        [0.29212674],
+        [0.32446656],
+        [0.47524976],
+        [0.4750054 ],
+        [0.18744124],
+        [0.33897346],
+        [0.0553399 ],
+        [0.69398539],
+        [0.18696649],
+        [0.00388388],
+        [0.12322366],
+        [0.38049156]]])
+        
+        
