@@ -1,3 +1,19 @@
+Project:  Naïve Bayesian Modelling Based Hazard Vulnerability in the Context of Demographic Dynamics for North East region in India.
+Main project features: Main objective is to find out the most vulnerable region and check the sustainability in North East using Naïve Bayesian modelling.
+
+Research Methodology Description:
+This module has been segmented into six segments, that is, identification of influential factors, normalization of influential factors, such as Total Population,
+Total Female Population, Total Male Population, Total Female working Population, and Total male Working Population using census data.
+
+Applied ML: Naïve Bayesian modelling using Python.
+
+Results:
+Based on this study, the highest risk values (probability score) occurred for the Assam districts such as Dhubri, Barpeta, Sonitpur and Cachar. 
+In addition, the highest risk values for mentioned districts like as 0.732, 0.671, 0.734, and 0.694. These districts are significantly affected in the scenario
+of natural hazards and disaster.
+
+
+
 ## Naive bayesian algorithm to predict most vulnerable regions (Natural hazards) in North east India in the context of Dempgramic dynamics
 # import the module
 import numpy as np      
