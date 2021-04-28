@@ -339,7 +339,7 @@ array([[[0.64936278],
         [0.76074964],
         [0.53221558]]])
         
- ## Naive bayes Thm (Posterior Probability)
+ ## Naive bayes Theorem (Posterior Probability)
       
 Prob_H_CI = NUM_H/ Deno
 Prob_M_CI = NUM_M/ Deno
@@ -374,4 +374,446 @@ array([[[0.73203993],
         [0.12322366],
         [0.38049156]]])
         
+     verify_result = Prob_H_CI + Prob_M_CI + Prob_L_CI
+     
+     verify_result
+Out[33]: 
+array([[[1.],
+        [1.],
+        [1.],
+        [1.]]])
         
+        
+    frames1 = [names, Prob_H_CI]
+frames2 = [names,Prob_M_CI]
+frames3 = [names,Prob_L_CI]
+result_H = np.concatenate(frames1, axis=None)
+result_M = np.concatenate(frames2, axis=None)
+result_L = np.concatenate(frames3, axis=None)     
+frames = [result_H, result_M, result_L]
+
+frames
+Out[35]: 
+[array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 'GOALPARA', 'BARPETA',
+        'NALBARI', 'KAMRUP', 'DARRANG', 'SONITPUR', 'LAKHIMPUR', 'DHEMAJI',
+        'MARIGAON', 'NAGAON', 'GOLAGHAT', 'JORHAT', 'SIBSAGAR',
+        'DIBRUGARH', 'TINSUKIA', 'KARBI ANGLONG', 'KARIMGANJ',
+        'HAILAKANDI', 'CACHAR', 'Baksa', 'Dima Hasao', 'Udalguri',
+        'Kamrup Metropolitan', 0.7320399278834355, 0.14344074199052684,
+        0.0782783629751842, 0.20129490080871104, 0.6715136599893454,
+        0.08803201821112136, 0.6132845077163935, 0.15413053496320017,
+        0.73424549450247, 0.24301421874698706, 0.0768093590617151,
+        0.1736143234032108, 0.5780327775642904, 0.2710529062397681,
+        0.292126740094354, 0.32446656488691655, 0.47524976417386267,
+        0.4750054028746564, 0.1874412405915062, 0.3389734552644553,
+        0.05533989886885732, 0.6939853906968646, 0.18696648647311376,
+        0.0038838750726707927, 0.12322366352969247, 0.3804915568560436],
+       dtype=object),
+ array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 'GOALPARA', 'BARPETA',
+        'NALBARI', 'KAMRUP', 'DARRANG', 'SONITPUR', 'LAKHIMPUR', 'DHEMAJI',
+        'MARIGAON', 'NAGAON', 'GOLAGHAT', 'JORHAT', 'SIBSAGAR',
+        'DIBRUGARH', 'TINSUKIA', 'KARBI ANGLONG', 'KARIMGANJ',
+        'HAILAKANDI', 'CACHAR', 'Baksa', 'Dima Hasao', 'Udalguri',
+        'Kamrup Metropolitan', 0.11945742599867147, 0.2229136907900462,
+        0.3011132859084573, 0.1684870339970833, 0.021089106186172445,
+        0.2878394124932071, 0.00012291361704814497, 0.21216914374172025,
+        0.13369098599690932, 0.13419874982002516, 0.3023629276317269,
+        0.19325978344721115, 0.42196722243570967, 0.11313141650813853,
+        0.09875849263676044, 0.07976174691372151, 0.013274448681452606,
+        0.01348675549056431, 0.18004809802471095, 0.0725640889714256,
+        0.3356569024090081, 0.03745909837017093, 0.18028093463146513,
+        0.46048617891616705, 0.24459187513464553, 0.0512870658459394],
+       dtype=object),
+ array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 'GOALPARA', 'BARPETA',
+        'NALBARI', 'KAMRUP', 'DARRANG', 'SONITPUR', 'LAKHIMPUR', 'DHEMAJI',
+        'MARIGAON', 'NAGAON', 'GOLAGHAT', 'JORHAT', 'SIBSAGAR',
+        'DIBRUGARH', 'TINSUKIA', 'KARBI ANGLONG', 'KARIMGANJ',
+        'HAILAKANDI', 'CACHAR', 'Baksa', 'Dima Hasao', 'Udalguri',
+        'Kamrup Metropolitan', 0.14850264611789307, 0.6336455672194269,
+        0.6206083511163585, 0.6302180651942058, 0.3073972338244821,
+        0.6241285692956716, 0.3865925786665584, 0.6337003212950796,
+        0.13206351950062076, 0.6227870314329877, 0.6208277133065581,
+        0.633125893149578, 0.0, 0.6158156772520933, 0.6091147672688855,
+        0.5957716881993619, 0.5114757871446848, 0.5115078416347792,
+        0.6325106613837828, 0.588462455764119, 0.6090031987221346,
+        0.2685555109329644, 0.632752578895421, 0.5356299460111621,
+        0.632184461335662, 0.568221377298017], dtype=object)]
+        
+        
+        my_df = pd.DataFrame(frames)
+df = my_df.T
+prob_H_M_L = df.to_csv('F:/AssamProb.csv')
+
+df
+Out[37]: 
+                      0                    1                    2
+0                DHUBRI               DHUBRI               DHUBRI
+1             KOKRAJHAR            KOKRAJHAR            KOKRAJHAR
+2            BONGAIGAON           BONGAIGAON           BONGAIGAON
+3              GOALPARA             GOALPARA             GOALPARA
+4               BARPETA              BARPETA              BARPETA
+5               NALBARI              NALBARI              NALBARI
+6                KAMRUP               KAMRUP               KAMRUP
+7               DARRANG              DARRANG              DARRANG
+8              SONITPUR             SONITPUR             SONITPUR
+9             LAKHIMPUR            LAKHIMPUR            LAKHIMPUR
+10              DHEMAJI              DHEMAJI              DHEMAJI
+11             MARIGAON             MARIGAON             MARIGAON
+12               NAGAON               NAGAON               NAGAON
+13             GOLAGHAT             GOLAGHAT             GOLAGHAT
+14               JORHAT               JORHAT               JORHAT
+15             SIBSAGAR             SIBSAGAR             SIBSAGAR
+16            DIBRUGARH            DIBRUGARH            DIBRUGARH
+17             TINSUKIA             TINSUKIA             TINSUKIA
+18        KARBI ANGLONG        KARBI ANGLONG        KARBI ANGLONG
+19            KARIMGANJ            KARIMGANJ            KARIMGANJ
+20           HAILAKANDI           HAILAKANDI           HAILAKANDI
+21               CACHAR               CACHAR               CACHAR
+22                Baksa                Baksa                Baksa
+23           Dima Hasao           Dima Hasao           Dima Hasao
+24             Udalguri             Udalguri             Udalguri
+25  Kamrup Metropolitan  Kamrup Metropolitan  Kamrup Metropolitan
+26              0.73204             0.119457             0.148503
+27             0.143441             0.222914             0.633646
+28            0.0782784             0.301113             0.620608
+29             0.201295             0.168487             0.630218
+30             0.671514            0.0210891             0.307397
+31             0.088032             0.287839             0.624129
+32             0.613285          0.000122914             0.386593
+33             0.154131             0.212169               0.6337
+34             0.734245             0.133691             0.132064
+35             0.243014             0.134199             0.622787
+36            0.0768094             0.302363             0.620828
+37             0.173614              0.19326             0.633126
+38             0.578033             0.421967                    0
+39             0.271053             0.113131             0.615816
+40             0.292127            0.0987585             0.609115
+41             0.324467            0.0797617             0.595772
+42              0.47525            0.0132744             0.511476
+43             0.475005            0.0134868             0.511508
+44             0.187441             0.180048             0.632511
+45             0.338973            0.0725641             0.588462
+46            0.0553399             0.335657             0.609003
+47             0.693985            0.0374591             0.268556
+48             0.186966             0.180281             0.632753
+49           0.00388388             0.460486              0.53563
+50             0.123224             0.244592             0.632184
+51             0.380492            0.0512871             0.568221
+
+
+CDVI = [(Prob_H_CI - (Prob_M_CI + Prob_L_CI))]
+mx = np.max(CDVI); mn = np.min(CDVI);
+NCDVI = [(CDVI - mn)/ (mx-mn)]
+frm = [names, NCDVI]
+ncdvi = np.concatenate(frm, axis=None)
+ncdvi = pd.DataFrame(ncdvi)
+exp = ncdvi.to_csv('F:/AssamNCDVI.csv')
+
+ncdvi
+Out[39]: 
+                      0
+0                DHUBRI
+1             KOKRAJHAR
+2            BONGAIGAON
+3              GOALPARA
+4               BARPETA
+5               NALBARI
+6                KAMRUP
+7               DARRANG
+8              SONITPUR
+9             LAKHIMPUR
+10              DHEMAJI
+11             MARIGAON
+12               NAGAON
+13             GOLAGHAT
+14               JORHAT
+15             SIBSAGAR
+16            DIBRUGARH
+17             TINSUKIA
+18        KARBI ANGLONG
+19            KARIMGANJ
+20           HAILAKANDI
+21               CACHAR
+22                Baksa
+23           Dima Hasao
+24             Udalguri
+25  Kamrup Metropolitan
+26              0.99698
+27             0.191079
+28              0.10186
+29             0.270292
+30             0.914109
+31             0.115214
+32             0.834382
+33             0.205715
+34                    1
+35             0.327414
+36            0.0998485
+37             0.232392
+38             0.786116
+39             0.365804
+40             0.394658
+41             0.438937
+42             0.645387
+43             0.645052
+44             0.251324
+45               0.4588
+46            0.0704528
+47             0.944876
+48             0.250674
+49                    0
+50             0.163398
+51             0.515645
+
+
+############# Build Multiple models to predict Naive bayesian based (CDVI) ###########
+
+import numpy as np 
+import pandas as pd 
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.svm import SVR
+from sklearn.linear_model import LinearRegression, BayesianRidge, ElasticNet
+from sklearn.linear_model import  Ridge, Lasso
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import r2_score
+
+# read the dataset
+data= pd.read_excel('Assam.xlsx')  ## File 2
+
+names = data.columns
+
+data.head()
+Out[43]: 
+     District     TOTP    FPOP    MPOP    TWFP    TWMP  CDVI - DM
+0      DHUBRI  1949258  951410  997848  144921  524898   0.996906
+1   KOKRAJHAR   887142  434237  452905  104809  236322   0.191315
+2  BONGAIGAON   738804  362986  375818   58264  197542   0.101849
+3    GOALPARA  1008183  494891  513292   95455  267118   0.270420
+4     BARPETA  1693622  826618  867004  116527  445297   0.913938
+
+data.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 26 entries, 0 to 25
+Data columns (total 7 columns):
+District     26 non-null object
+TOTP         26 non-null int64
+FPOP         26 non-null int64
+MPOP         26 non-null int64
+TWFP         26 non-null int64
+TWMP         26 non-null int64
+CDVI - DM    26 non-null float64
+dtypes: float64(1), int64(5), object(1)
+memory usage: 1.5+
+
+##data.drop('MPOP', axis = 1, inplace = True)
+##data = data.drop(data[(data['CDVI - DM']<0.50) & (data['TOT']<30)].index)
+
+######################### Splitting the data #######################################
+
+X = data.iloc[:, 1:6]
+y = data.iloc[:, 6]
+y = pd.DataFrame(y)
+
+X_trn = X[:19]
+y_trn = y[:19]
+X_tst = X[19:26]
+y_tst = y[19:26]
+y_tst = pd.DataFrame(y_tst)
+X_tst = pd.DataFrame(X_tst)
+
+################################ Future Scaling ##################################
+scaler = StandardScaler()
+scaler.fit(X_trn)
+X_trn = scaler.transform(X_trn)
+X_tst = scaler.transform(X_tst)
+
+################ Random Forest Regressor ##########################################
+md = RandomForestRegressor(n_jobs=-1)
+clss = RandomForestRegressor(n_estimators=30, criterion='mse', max_depth=30) 
+clss.fit(X_trn, y_trn)
+scoreOfModel1 = clss.score(X_trn, y_trn)
+print("Model Score RFR: ",scoreOfModel1)    
+
+pred1 = clss.predict(X_tst)
+pred1 = pd.DataFrame(pred1)
+###################################################################################
+#################### Decision Tree Regressor ######################################
+clss = DecisionTreeRegressor()
+clss.fit(X_trn, y_trn)
+scoreOfModel2 = clss.score(X_trn, y_trn)
+print("Model Score DTR: ",scoreOfModel2)
+
+pred2 = clss.predict(X_tst)
+pred2 = pd.DataFrame(pred2)
+####################################################################################
+###################### Support vector regressor ####################################
+sv = SVR(kernel = 'rbf', C=1.0) # radial basis function(rbf)
+sv.fit(X_trn, y_trn)
+scoreOfModel3 = sv.score(X_trn, y_trn)
+print("Model Score SVR: ",scoreOfModel3)
+
+pred3 = sv.predict(X_tst)
+pred3 = pd.DataFrame(pred3)
+####################################################################################
+################### Multiple Linear Regression #####################################
+reg = LinearRegression()
+reg.fit(X_trn, y_trn)
+scoreOfModel4 = reg.score(X_trn, y_trn)
+
+pred4 = reg.predict(X_tst)
+pred4 = pd.DataFrame(pred4) 
+print('r2 score MLR:', {r2_score(y_tst, pred4)}) #model Evaluation
+###################################################################################
+######################### Ridge Regression (L2) ###################################
+rg = Ridge(alpha=1.0)
+rg.fit(X_trn, y_trn)
+rg.score(X_trn, y_trn)
+rg.__dict__
+scoreOfModel5 = rg.score(X_trn, y_trn)
+
+pred5 = rg.predict(X_tst)
+pred5 = pd.DataFrame(pred5)
+print('r2 score Ridge:', {r2_score(y_tst, pred5)}) #model Evaluation
+
+##################################################################################
+#########################  Lasso regression (L1) #################################
+ls = Lasso(alpha=0.1)
+ls.fit(X_trn, y_trn)
+ls.score(X_trn, y_trn)
+ls.intercept_
+ls.coef_
+ls.__dict__
+scoreOfModel6 = ls.score(X_trn, y_trn)
+
+pred6 = ls.predict(X_tst)
+pred6 = pd.DataFrame(pred6)
+print('r2 score:', {r2_score(y_tst, pred6)})
+############### Bayesian regression ###############################################
+Bs = BayesianRidge() 
+Bs.fit(X_trn, y_trn) 
+Bs.coef_
+Bs.intercept_
+scoreOfModel7 = Bs.score(X_trn, y_trn)
+
+pred7 = Bs.predict(X_tst)
+pred7 = pd.DataFrame(pred7)
+print('r2 score BSR:', {r2_score(y_tst, pred7)}) #model Evaluation
+
+############## ElasticNet Regression (L1 + L2 penalized model) ###########
+## hyperparameter that determines strength of a Ridge,lasso, elastcNet regression 
+# we use alpha as our hyperparameter lambda ## l1 for lasso
+enet = ElasticNet(alpha=0.005, l1_ratio=0.7)
+enet.fit(X_trn, y_trn)
+enet.alpha
+scoreOfModel8 = enet.score(X_trn, y_trn)
+
+pred8 = enet.predict(X_tst)
+pred8 = pd.DataFrame(pred8)
+print('r2 score:', {r2_score(y_tst, pred8)})
+
+################################################################################
+print("Model predicted RFR: ",pred1)
+print("Model predicted DTR: ",pred2)
+print("Model predicted SVR: ",pred3)
+print("Model predicted MLR: ",pred4)
+print("Model predicted Ridge: ",pred5)
+print("Model predicted Lasso: ",pred6)
+print("Model predicted Bayesian ridge Reg: ",pred7)
+print("Model predicted ElasticNet:", pred8)
+
+""" Comparing multiple models """
+########################################################################################
+models = pd.DataFrame({'Models': ['RFR','DTR','SVR','MLR','Ridge','Lasso', 'Bayesian Reg', 'E_Net'],   
+    'Score': [scoreOfModel1,scoreOfModel2, scoreOfModel3, scoreOfModel4,
+              scoreOfModel5, scoreOfModel6, scoreOfModel7, scoreOfModel8] })
+models.sort_values(by='Score', ascending=False)
+Model Score RFR:  0.9960304659730086
+Model Score DTR:  0.9999999627623446
+Model Score SVR:  0.9441311411367278
+r2 score MLR: {0.5832025256283164}
+r2 score Ridge: {0.7908128232597118}
+r2 score: {0.6584885907827149}
+r2 score BSR: {0.7959034039856475}
+r2 score: {0.7880180238787802}
+Model predicted RFR:            0
+0  0.472721
+1  0.106310
+2  0.930598
+3  0.248909
+4  0.106310
+5  0.175586
+6  0.644064
+Model predicted DTR:            0
+0  0.439752
+1  0.100177
+2  0.913938
+3  0.232522
+4  0.100177
+5  0.191315
+6  0.646323
+Model predicted SVR:            0
+0  0.464426
+1  0.234200
+2  0.864212
+3  0.311225
+4  0.441231
+5  0.207043
+6  0.549665
+Model predicted MLR:            0
+0  0.267335
+1  0.135543
+2  0.615542
+3  0.128377
+4 -0.049331
+5  0.083017
+6  0.820158
+Model predicted Ridge:            0
+0  0.357399
+1  0.078817
+2  0.650726
+3  0.340330
+4 -0.119258
+5  0.254323
+6  0.436612
+Model predicted Lasso:            0
+0  0.430079
+1  0.260855
+2  0.603414
+3  0.379477
+4  0.132566
+5  0.336399
+6  0.496463
+Model predicted Bayesian ridge Reg:            0
+0  0.364181
+1  0.091109
+2  0.649801
+3  0.341836
+4 -0.103960
+5  0.258877
+6  0.440005
+Model predicted ElasticNet:           0
+0  0.356781
+1  0.078319
+2  0.648839
+3  0.336908
+4 -0.120599
+5  0.251242
+6  0.428349
+
+## Model scores
+Out[48]: 
+         Models     Score
+1           DTR  1.000000
+0           RFR  0.996030
+2           SVR  0.944131
+3           MLR  0.857221
+7         E_Net  0.758489
+4         Ridge  0.755402
+6  Bayesian Reg  0.754097
+5         Lasso  0.626048
+
+
+#### write the output file
+al = pd.concat([pred1,pred2,pred3,pred4,pred5,pred6,pred7,pred8, y_tst], axis =1)
+al.to_csv('F:/Assam_pred_8_Algo.csv')
