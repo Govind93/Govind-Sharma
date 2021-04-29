@@ -29,7 +29,9 @@ Once you are done, name your final clean dataset as df_clean (if it's not alread
 At the end, run each one of the following three lines in three separate code cells for a summary:
 
 df_clean.shape
+
 df_clean.describe(include='all').round(3) 
+
 df_clean.head(5)
 
 Save your final clean dataset exactly as "df_clean.csv". Make sure your file has the correct column names (including the target column). Next, you will upload this CSV file on to Canvas as part of your assignment solutions. That is, in addition to an HTML file (that contains your solutions), you also need to upload your clean data in CSV format on Canvas with this name.
