@@ -1,5 +1,5 @@
 ## Credit Card Approval Assessment
-Question 1
+Question 
 Data preprocessing is a critical component in machine learning and its importance cannot be overstated. If you do not prepare your data correctly, you can use the fanciest machine learning algorithm in the world and your results will still be incorrect.
 
 For this question, you will perform any and all data preprocessing steps on a dataset on the UCI ML Datasets Repository so that the clean dataset you end up with can be directly fed into any classification algorithm within the Scikit-Learn Python module without any further changes.
