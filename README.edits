@@ -27,38 +27,6 @@ dt.info()
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 26 entries, 0 to 25
 Data columns (total 48 columns):
-Dist91       22 non-null object
-TPOP91       22 non-null float64
-TMP91        22 non-null float64
-TFP91        22 non-null float64
-MSC91        22 non-null float64
-FSC91        22 non-null float64
-MST91        22 non-null float64
-FST91        22 non-null float64
-MLIT91       22 non-null float64
-FLIT91       22 non-null float64
-MILL91       0 non-null float64
-FILL91       0 non-null float64
-TMW91        22 non-null float64
-TFW91        22 non-null float64
-NONWM91      22 non-null float64
-NONWF91      22 non-null float64
-Dist2001     22 non-null object
-TPOP2001     22 non-null float64
-TMP2001      22 non-null float64
-TFP2001      22 non-null float64
-MSC2001      22 non-null float64
-FSC2001      22 non-null float64
-MST2001      22 non-null float64
-FST2001      22 non-null float64
-MLIT2001     22 non-null float64
-FLIT2001     22 non-null float64
-MILL2001     22 non-null float64
-FILL2001     22 non-null float64
-TMW2001      22 non-null float64
-TFW2001      22 non-null float64
-NONWM2001    22 non-null float64
-NONWF2001    22 non-null float64
 Dist2011     26 non-null object
 TPOP2011     26 non-null int64
 TMP2011      26 non-null int64
@@ -122,11 +90,6 @@ TFP = Tr2011[['TFP2011']]/dtt[[3]]
 TMP = Tr2011[['TMP2011']]/dtt[[2]]
 TFW = Tr2011[['TFW2011']]/dtt[[13]]
 TMW = Tr2011[['TMW2011']]/dtt[[12]] 
-Tpop = Tpop.values
-TFP = TFP.values
-TMP = TMP.values
-TFW = TFW.values
-TMW = TMW.values
 
 Tpop
 Out[11]: 
