@@ -1,4 +1,4 @@
-Project:  Naïve Bayesian Modelling Based Hazard Vulnerability in the Context of Demographic Dynamics for North East region in India.
+##  Naïve Bayesian Modelling Based Hazard Vulnerability in the Context of Demographic Dynamics for North East region in India.
 
 Main project features: Main objective is to find out the most vulnerable region and check the sustainability in North East using Naïve Bayesian modelling.
 
