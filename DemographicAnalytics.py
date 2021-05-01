@@ -1,6 +1,6 @@
 ## Demographic dynamics _Disaster Risk reduction ( Naive bayesian Algorithm)
 
-# Python with Pandas 
+# Import the modules
 import numpy as np      
 import pandas as pd 
 ## Read the dataset
@@ -9,7 +9,8 @@ dt.info()
 dt.describe()  
 
 Tr2011 = dt.iloc[:, 32:48]
-names = dt.iloc[:,32].to_frame() 
+names = dt.iloc[:,32].to_frame()
+## Row sums
 dtt = Tr2011.sum(axis = 0, skipna = True)
 
 #### Calculate the ratio for each observation
@@ -18,11 +19,11 @@ TFP = Tr2011[['TFP2011']]/dtt[[3]]
 TMP = Tr2011[['TMP2011']]/dtt[[2]]
 TFW = Tr2011[['TFW2011']]/dtt[[13]]
 TMW = Tr2011[['TMW2011']]/dtt[[12]] 
-Tpop = Tpop.values
-TFP = TFP.values
-TMP = TMP.values
-TFW = TFW.values
-TMW = TMW.values
+Tpop = TOP.values
+TFP = TPF.values
+TMP = TNP.values
+TFW = TWF.values
+TMW = TWM.values
 
 ## Wrt Total Population 
 TpopMax = Tpop.max()
