@@ -677,6 +677,7 @@ Model predicted ElasticNet:
 ## Model scores
 Out[48]: 
          Models     Score
+         
            DTR  1.000
            RFR  0.996
            SVR  0.944
@@ -685,7 +686,6 @@ Out[48]:
          Ridge  0.755
   Bayesian Reg  0.754
          Lasso  0.626
-
 
 #### write the output file
 al = pd.concat([pred1,pred2,pred3,pred4,pred5,pred6,pred7,pred8, y_tst], axis =1)
