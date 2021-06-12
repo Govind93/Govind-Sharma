@@ -600,7 +600,8 @@ r2 score Ridge: {0.7908128232597118}
 r2 score: {0.6584885907827149}
 r2 score BSR: {0.7959034039856475}
 r2 score: {0.7880180238787802}
-Model predicted RFR:            
+
+Model predicted RFR:
 0  0.472721
 1  0.106310
 2  0.930598
@@ -608,6 +609,7 @@ Model predicted RFR:
 4  0.106310
 5  0.175586
 6  0.644064
+
 Model predicted DTR:            
 0  0.439752
 1  0.100177
@@ -616,6 +618,7 @@ Model predicted DTR:
 4  0.100177
 5  0.191315
 6  0.646323
+
 Model predicted SVR:            
 0  0.464426
 1  0.234200
@@ -624,6 +627,7 @@ Model predicted SVR:
 4  0.441231
 5  0.207043
 6  0.549665
+
 Model predicted MLR:            
 0  0.267335
 1  0.135543
@@ -632,6 +636,7 @@ Model predicted MLR:
 4 -0.049331
 5  0.083017
 6  0.820158
+
 Model predicted Ridge:            
 0  0.357399
 1  0.078817
@@ -640,6 +645,7 @@ Model predicted Ridge:
 4 -0.119258
 5  0.254323
 6  0.436612
+
 Model predicted Lasso:            
 0  0.430079
 1  0.260855
@@ -648,6 +654,7 @@ Model predicted Lasso:
 4  0.132566
 5  0.336399
 6  0.496463
+
 Model predicted Bayesian ridge Reg:            
 0  0.364181
 1  0.091109
@@ -656,6 +663,7 @@ Model predicted Bayesian ridge Reg:
 4 -0.103960
 5  0.258877
 6  0.440005
+
 Model predicted ElasticNet:           
 0  0.356781
 1  0.078319
