@@ -683,10 +683,10 @@ Out[48]:
            SVR  0.944
            MLR  0.857
          E_Net  0.758
-         Ridge  0.755
-  Bayesian Reg  0.754
+         Ridge  0.755 
+         Bayesian Reg  0.754
          Lasso  0.626
-
+         
 #### write the output file
 al = pd.concat([pred1,pred2,pred3,pred4,pred5,pred6,pred7,pred8, y_tst], axis =1)
 
