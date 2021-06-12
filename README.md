@@ -377,50 +377,15 @@ frames = [result_H, result_M, result_L]
 
 frames
 Out[35]: 
-[array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 'GOALPARA', 'BARPETA',
-        'NALBARI', 'KAMRUP', 'DARRANG', 'SONITPUR', 'LAKHIMPUR', 'DHEMAJI',
-        'MARIGAON', 'NAGAON', 'GOLAGHAT', 'JORHAT', 'SIBSAGAR',
-        'DIBRUGARH', 'TINSUKIA', 'KARBI ANGLONG', 'KARIMGANJ',
-        'HAILAKANDI', 'CACHAR', 'Baksa', 'Dima Hasao', 'Udalguri',
+[array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON',
         'Kamrup Metropolitan', 0.7320399278834355, 0.14344074199052684,
-        0.0782783629751842, 0.20129490080871104, 0.6715136599893454,
-        0.08803201821112136, 0.6132845077163935, 0.15413053496320017,
-        0.73424549450247, 0.24301421874698706, 0.0768093590617151,
-        0.1736143234032108, 0.5780327775642904, 0.2710529062397681,
-        0.292126740094354, 0.32446656488691655, 0.47524976417386267,
-        0.4750054028746564, 0.1874412405915062, 0.3389734552644553,
-        0.05533989886885732, 0.6939853906968646, 0.18696648647311376,
-        0.0038838750726707927, 0.12322366352969247, 0.3804915568560436],
+        0.0782783629751842],
        dtype=object),
- array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 'GOALPARA', 'BARPETA',
-        'NALBARI', 'KAMRUP', 'DARRANG', 'SONITPUR', 'LAKHIMPUR', 'DHEMAJI',
-        'MARIGAON', 'NAGAON', 'GOLAGHAT', 'JORHAT', 'SIBSAGAR',
-        'DIBRUGARH', 'TINSUKIA', 'KARBI ANGLONG', 'KARIMGANJ',
-        'HAILAKANDI', 'CACHAR', 'Baksa', 'Dima Hasao', 'Udalguri',
-        'Kamrup Metropolitan', 0.11945742599867147, 0.2229136907900462,
-        0.3011132859084573, 0.1684870339970833, 0.021089106186172445,
-        0.2878394124932071, 0.00012291361704814497, 0.21216914374172025,
-        0.13369098599690932, 0.13419874982002516, 0.3023629276317269,
-        0.19325978344721115, 0.42196722243570967, 0.11313141650813853,
-        0.09875849263676044, 0.07976174691372151, 0.013274448681452606,
-        0.01348675549056431, 0.18004809802471095, 0.0725640889714256,
-        0.3356569024090081, 0.03745909837017093, 0.18028093463146513,
-        0.46048617891616705, 0.24459187513464553, 0.0512870658459394],
+ array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 0.11945742599867147, 0.2229136907900462,
+        0.3011132859084573],
        dtype=object),
- array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 'GOALPARA', 'BARPETA',
-        'NALBARI', 'KAMRUP', 'DARRANG', 'SONITPUR', 'LAKHIMPUR', 'DHEMAJI',
-        'MARIGAON', 'NAGAON', 'GOLAGHAT', 'JORHAT', 'SIBSAGAR',
-        'DIBRUGARH', 'TINSUKIA', 'KARBI ANGLONG', 'KARIMGANJ',
-        'HAILAKANDI', 'CACHAR', 'Baksa', 'Dima Hasao', 'Udalguri',
-        'Kamrup Metropolitan', 0.14850264611789307, 0.6336455672194269,
-        0.6206083511163585, 0.6302180651942058, 0.3073972338244821,
-        0.6241285692956716, 0.3865925786665584, 0.6337003212950796,
-        0.13206351950062076, 0.6227870314329877, 0.6208277133065581,
-        0.633125893149578, 0.0, 0.6158156772520933, 0.6091147672688855,
-        0.5957716881993619, 0.5114757871446848, 0.5115078416347792,
-        0.6325106613837828, 0.588462455764119, 0.6090031987221346,
-        0.2685555109329644, 0.632752578895421, 0.5356299460111621,
-        0.632184461335662, 0.568221377298017], dtype=object)]
+ array(['DHUBRI', 'KOKRAJHAR', 'BONGAIGAON', 0.14850264611789307, 0.6336455672194269,
+        0.6206083511163585,], dtype=object)]
         
         
         my_df = pd.DataFrame(frames)
@@ -434,54 +399,11 @@ Out[37]:
 1             KOKRAJHAR            KOKRAJHAR            KOKRAJHAR
 2            BONGAIGAON           BONGAIGAON           BONGAIGAON
 3              GOALPARA             GOALPARA             GOALPARA
-4               BARPETA              BARPETA              BARPETA
-5               NALBARI              NALBARI              NALBARI
-6                KAMRUP               KAMRUP               KAMRUP
-7               DARRANG              DARRANG              DARRANG
-8              SONITPUR             SONITPUR             SONITPUR
-9             LAKHIMPUR            LAKHIMPUR            LAKHIMPUR
-10              DHEMAJI              DHEMAJI              DHEMAJI
-11             MARIGAON             MARIGAON             MARIGAON
-12               NAGAON               NAGAON               NAGAON
-13             GOLAGHAT             GOLAGHAT             GOLAGHAT
-14               JORHAT               JORHAT               JORHAT
-15             SIBSAGAR             SIBSAGAR             SIBSAGAR
-16            DIBRUGARH            DIBRUGARH            DIBRUGARH
-17             TINSUKIA             TINSUKIA             TINSUKIA
-18        KARBI ANGLONG        KARBI ANGLONG        KARBI ANGLONG
-19            KARIMGANJ            KARIMGANJ            KARIMGANJ
-20           HAILAKANDI           HAILAKANDI           HAILAKANDI
-21               CACHAR               CACHAR               CACHAR
-22                Baksa                Baksa                Baksa
-23           Dima Hasao           Dima Hasao           Dima Hasao
-24             Udalguri             Udalguri             Udalguri
-25  Kamrup Metropolitan  Kamrup Metropolitan  Kamrup Metropolitan
-26              0.73204             0.119457             0.148503
-27             0.143441             0.222914             0.633646
-28            0.0782784             0.301113             0.620608
-29             0.201295             0.168487             0.630218
-30             0.671514            0.0210891             0.307397
-31             0.088032             0.287839             0.624129
-32             0.613285          0.000122914             0.386593
-33             0.154131             0.212169               0.6337
-34             0.734245             0.133691             0.132064
-35             0.243014             0.134199             0.622787
-36            0.0768094             0.302363             0.620828
-37             0.173614              0.19326             0.633126
-38             0.578033             0.421967                    0
-39             0.271053             0.113131             0.615816
-40             0.292127            0.0987585             0.609115
-41             0.324467            0.0797617             0.595772
-42              0.47525            0.0132744             0.511476
-43             0.475005            0.0134868             0.511508
-44             0.187441             0.180048             0.632511
-45             0.338973            0.0725641             0.588462
-46            0.0553399             0.335657             0.609003
-47             0.693985            0.0374591             0.268556
-48             0.186966             0.180281             0.632753
-49           0.00388388             0.460486              0.53563
-50             0.123224             0.244592             0.632184
-51             0.380492            0.0512871             0.568221
+
+4              0.73204             0.119457             0.148503
+5             0.143441             0.222914             0.633646
+6            0.0782784             0.301113             0.620608
+7             0.201295             0.168487             0.630218
 
 
 CDVI = [(Prob_H_CI - (Prob_M_CI + Prob_L_CI))]
@@ -500,53 +422,12 @@ Out[39]:
 2            BONGAIGAON
 3              GOALPARA
 4               BARPETA
-5               NALBARI
-6                KAMRUP
-7               DARRANG
-8              SONITPUR
-9             LAKHIMPUR
-10              DHEMAJI
-11             MARIGAON
-12               NAGAON
-13             GOLAGHAT
-14               JORHAT
-15             SIBSAGAR
-16            DIBRUGARH
-17             TINSUKIA
-18        KARBI ANGLONG
-19            KARIMGANJ
-20           HAILAKANDI
-21               CACHAR
-22                Baksa
-23           Dima Hasao
-24             Udalguri
-25  Kamrup Metropolitan
-26              0.99698
-27             0.191079
-28              0.10186
-29             0.270292
-30             0.914109
-31             0.115214
-32             0.834382
-33             0.205715
-34                    1
-35             0.327414
-36            0.0998485
-37             0.232392
-38             0.786116
-39             0.365804
-40             0.394658
-41             0.438937
-42             0.645387
-43             0.645052
-44             0.251324
-45               0.4588
-46            0.0704528
-47             0.944876
-48             0.250674
-49                    0
-50             0.163398
-51             0.515645
+
+5              0.99698
+6             0.191079
+7              0.10186
+8             0.270292
+9             0.914109
 
 
 ############# Build Multiple models to predict Naive bayesian based (CDVI) ###########
@@ -719,7 +600,7 @@ r2 score Ridge: {0.7908128232597118}
 r2 score: {0.6584885907827149}
 r2 score BSR: {0.7959034039856475}
 r2 score: {0.7880180238787802}
-Model predicted RFR:            0
+Model predicted RFR:            
 0  0.472721
 1  0.106310
 2  0.930598
@@ -727,7 +608,7 @@ Model predicted RFR:            0
 4  0.106310
 5  0.175586
 6  0.644064
-Model predicted DTR:            0
+Model predicted DTR:            
 0  0.439752
 1  0.100177
 2  0.913938
@@ -735,7 +616,7 @@ Model predicted DTR:            0
 4  0.100177
 5  0.191315
 6  0.646323
-Model predicted SVR:            0
+Model predicted SVR:            
 0  0.464426
 1  0.234200
 2  0.864212
@@ -743,7 +624,7 @@ Model predicted SVR:            0
 4  0.441231
 5  0.207043
 6  0.549665
-Model predicted MLR:            0
+Model predicted MLR:            
 0  0.267335
 1  0.135543
 2  0.615542
@@ -751,7 +632,7 @@ Model predicted MLR:            0
 4 -0.049331
 5  0.083017
 6  0.820158
-Model predicted Ridge:            0
+Model predicted Ridge:            
 0  0.357399
 1  0.078817
 2  0.650726
@@ -759,7 +640,7 @@ Model predicted Ridge:            0
 4 -0.119258
 5  0.254323
 6  0.436612
-Model predicted Lasso:            0
+Model predicted Lasso:            
 0  0.430079
 1  0.260855
 2  0.603414
@@ -767,7 +648,7 @@ Model predicted Lasso:            0
 4  0.132566
 5  0.336399
 6  0.496463
-Model predicted Bayesian ridge Reg:            0
+Model predicted Bayesian ridge Reg:            
 0  0.364181
 1  0.091109
 2  0.649801
@@ -775,7 +656,7 @@ Model predicted Bayesian ridge Reg:            0
 4 -0.103960
 5  0.258877
 6  0.440005
-Model predicted ElasticNet:           0
+Model predicted ElasticNet:           
 0  0.356781
 1  0.078319
 2  0.648839
@@ -799,4 +680,5 @@ Out[48]:
 
 #### write the output file
 al = pd.concat([pred1,pred2,pred3,pred4,pred5,pred6,pred7,pred8, y_tst], axis =1)
+
 al.to_csv('F:/Assam_pred_8_Algo.csv')
