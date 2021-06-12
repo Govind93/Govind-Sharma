@@ -592,6 +592,7 @@ models = pd.DataFrame({'Models': ['RFR','DTR','SVR','MLR','Ridge','Lasso', 'Baye
     'Score': [scoreOfModel1,scoreOfModel2, scoreOfModel3, scoreOfModel4,
               scoreOfModel5, scoreOfModel6, scoreOfModel7, scoreOfModel8] })
 models.sort_values(by='Score', ascending=False)
+
 Model Score RFR:  0.9960304659730086
 Model Score DTR:  0.9999999627623446
 Model Score SVR:  0.9441311411367278
