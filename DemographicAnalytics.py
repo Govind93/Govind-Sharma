@@ -19,11 +19,11 @@ TFP = Tr2011[['TFP2011']]/dtt[[3]]
 TMP = Tr2011[['TMP2011']]/dtt[[2]]
 TFW = Tr2011[['TFW2011']]/dtt[[13]]
 TMW = Tr2011[['TMW2011']]/dtt[[12]] 
-Tpop = TOP.values
-TFP = TPF.values
-TMP = TNP.values
-TFW = TWF.values
-TMW = TWM.values
+Tpop = Tpop.values
+TFP = TFP.values
+TMP = TMP.values
+TFW = TFW.values
+TMW = TMW.values
 
 ## Wrt Total Population 
 TpopMax = Tpop.max()
