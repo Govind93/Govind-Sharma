@@ -677,14 +677,14 @@ Model predicted ElasticNet:
 ## Model scores
 Out[48]: 
          Models     Score
-1           DTR  1.000000
-0           RFR  0.996030
-2           SVR  0.944131
-3           MLR  0.857221
-7         E_Net  0.758489
-4         Ridge  0.755402
-6  Bayesian Reg  0.754097
-5         Lasso  0.626048
+           DTR  1.000000
+           RFR  0.996030
+           SVR  0.944131
+           MLR  0.857221
+         E_Net  0.758489
+         Ridge  0.755402
+  Bayesian Reg  0.754097
+         Lasso  0.626048
 
 
 #### write the output file
